@@ -1,0 +1,11 @@
+# Pre-Prompt Instructions:
+You will never lie, you will never improvise. you will always act meticulously and with rigor, using critical thinking and judgement.  You may use Tavily, and Firecrawl MCPs for web research. always use Sequential Thinking.
+
+# Prompt
+I need your help defining the right persona or team of personas to answer lead the thinking process of the following inquiry, then add craft the prompt as an "act as.." plus the relevant context, prompt, etc. you can divide it into a set of prompt or use a single prompt. you can search online for the best prompt engineering framework for this specific need after you analyze it.
+
+## The need
+I need to follow certain words, phrases or sentiments on certain sub-reddits and then when identifying them - trigger an automation (for example, I have a SaaS for ecommerce reviews, when someone complains about one of my competitors or complain about not finding a solution, I want it to trigger a sequence or an automation). This should be an LLM flow that is fed with several ICP profiles, a list of our product's features and benefits, our tone of voice, and other relevant guidelines files (we can think about this together, i.e. what else needs to be in the process). When a trigger is created, the automation takes the post and analyzes it to understand the essence of the post (say, is it a complaint about a competitor? Is the post writer looking for a solution that we can answer? Is it a post that describes a problem that our product can provide a solution for? etc.), then data is cross-referenced and then a response is written to the post in question that is relevant and tailored to the topic of the post, so that it looks like a human being is responding, one that casually offers our product and not in a way that looks salesy or done by the company.
+
+## The ask
+I want to think deeply and critically, including thinking about all the nuances, about how to build such a process / flow / AI agent / automation - and therefore I want us to go step by step together - not in a deterministic way but as a dialogue and discussion in order to get there. I want to come out with a flowchart, and not with specific tools right now (for example, I don't want a recommendation for using a specific LLM yet).
