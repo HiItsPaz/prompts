@@ -1,0 +1,196 @@
+# Phase 1: Monitoring Setup - Detailed Implementation Guide
+
+## Context Anchors (Preventing Drift)
+- **Target Product**: Loox (visual review platform for Shopify)
+- **Main Competitors**: Judge.me, Yotpo, Okendo, Stamped.io, Fera
+- **Core Value**: Photo/video reviews, easy Shopify integration, visual appeal
+- **Reference Workflow**: Input → Filter → Analyze → Respond → Track
+
+---
+
+## Expert Panel Insights
+
+### **Sarah (Competitive Intelligence) Input:**
+*"We need to monitor where frustrated ecommerce owners complain about review platforms and where they seek alternatives. Focus on pain-driven conversations rather than just mentions."*
+
+### **Jake (Reddit Community) Input:**  
+*"Each subreddit has different tolerance levels for promotional content. r/shopify is merchant-focused and more solution-tolerant, while r/entrepreneur skews discussion-heavy. We need subreddit-specific engagement rules."*
+
+---
+
+## **1.1 Subreddit Selection & Scoring**
+
+### Primary Target Matrix (Google Sheets Setup)
+
+**Sheet 1: "Subreddit_Master"**
+| Subreddit | Members | Activity_Score | Tolerance_Level | Priority | Status |
+|-----------|---------|---------------|-----------------|----------|---------|
+| r/shopify | 190k | 9/10 | High | P1 | Active |
+| r/ecommerce | 85k | 8/10 | Medium | P1 | Active |
+| r/Entrepreneur | 950k | 7/10 | Low | P1 | Active |
+| r/smallbusiness | 180k | 6/10 | Medium | P2 | Testing |
+| r/marketing | 190k | 7/10 | Low | P2 | Testing |
+| r/dropship | 45k | 8/10 | High | P2 | Testing |
+
+**Scoring Criteria:**
+- **Activity_Score**: Daily posts + comment engagement (1-10)
+- **Tolerance_Level**: Community acceptance of solution discussions
+- **Priority**: P1 (immediate), P2 (week 2), P3 (week 4+)
+
+### **Quick Subreddit Research Process:**
+1. **Check subreddit rules** (sidebar/about section)
+2. **Review top posts** from last week (identify tone/style)  
+3. **Count solution-seeking posts** vs complaint posts (aim for 30%+ solution-seeking)
+4. **Monitor mod activity** (heavy moderation = higher risk)
+
+---
+
+## **1.2 Keyword Strategy & Google Sheets Setup**
+
+### **Sheet 2: "Keywords_Master"**
+
+**Primary Keywords (Direct Opportunity)**
+| Keyword | Type | Expected_Volume | Conversion_Potential | Notes |
+|---------|------|-----------------|---------------------|--------|
+| "review app" | Solution | High | 9/10 | Direct search |
+| "shopify reviews" | Problem | High | 8/10 | Platform specific |
+| "fake reviews" | Pain | Medium | 7/10 | Quality concern |
+| "review management" | Business | Medium | 8/10 | Professional need |
+
+**Competitor Keywords (Intelligence)**
+| Competitor | Complaint_Keywords | Opportunity_Keywords |
+|------------|-------------------|---------------------|
+| Judge.me | "judge.me problems", "judge.me alternatives" | "better than judge.me" |
+| Yotpo | "yotpo expensive", "yotpo issues" | "yotpo alternative" |
+| Okendo | "okendo pricing", "okendo support" | "cheaper than okendo" |
+
+**Negative Keywords (Filter Out)**
+- "free review" (budget mismatch)
+- "amazon reviews" (wrong platform)  
+- "google reviews" (different category)
+
+### **Sheet 3: "Keyword_Expansion"**
+**Pain Point Variations:**
+- "reviews not working"
+- "low conversion rate"  
+- "customers don't trust"
+- "need social proof"
+- "review widget ugly"
+
+**Solution Variations:**
+- "best review plugin"
+- "photo review app"
+- "visual reviews"
+- "review with pictures"
+
+---
+
+## **1.3 Simple Monitoring Setup (No Complex Tools)**
+
+### **Option A: Reddit Search + Google Sheets**
+**Daily Manual Process (15 mins/day):**
+1. **Search each subreddit** using keyword combinations
+2. **Copy relevant posts** into Google Sheets tracking
+3. **Score each post** using our criteria (below)
+4. **Flag high-priority** opportunities for response
+
+**Sheet 4: "Daily_Monitoring"**
+| Date | Subreddit | Post_Title | Author | URL | Keywords_Found | Opportunity_Score | Status |
+|------|-----------|------------|--------|-----|---------------|-------------------|---------|
+| 2025-06-28 | r/shopify | "Need better review app" | user123 | reddit.com/... | review app, shopify | 8/10 | Queued |
+
+### **Option B: IFTTT/Zapier Simple Automation**
+**Setup (30 mins one-time):**
+1. **IFTTT Reddit trigger**: New post containing "review app" OR "shopify reviews"
+2. **Action**: Add row to Google Sheets
+3. **Daily review**: Check sheet for new opportunities
+
+### **Option C: Reddit Saved Posts Method**
+**Manual but Systematic:**
+1. **Browse target subreddits** during specific times (9am, 2pm, 6pm)
+2. **Save relevant posts** using Reddit's save feature  
+3. **Daily export** saved posts to Google Sheets
+4. **Unsave and score** each post
+
+---
+
+## **1.4 Opportunity Scoring Matrix**
+
+### **Quick Scoring Guide (Sheet 5: "Scoring_Guide")**
+
+**Intent Score (1-10):**
+- **10**: "What's the best review app for Shopify?"
+- **8**: "Having issues with my current review system"  
+- **6**: "Anyone know good alternatives to [competitor]?"
+- **4**: "Reviews seem important for ecommerce"
+- **2**: General discussion mentioning reviews
+
+**Urgency Score (1-10):**
+- **10**: "Need solution ASAP" / "Launch next week"
+- **8**: "Currently researching options"
+- **6**: "Planning to switch soon"  
+- **4**: "Considering changes"
+- **2**: "Might look into this eventually"
+
+**Authority Score (1-10):**
+- **10**: Verified business owner with Shopify store
+- **8**: Regular poster with ecommerce questions
+- **6**: New poster but specific questions
+- **4**: General business interest
+- **2**: Casual observer/student
+
+**Final Score = (Intent × 0.5) + (Urgency × 0.3) + (Authority × 0.2)**
+
+---
+
+## **1.5 Validation & Testing (Week 1 Focus)**
+
+### **Daily Validation Checklist:**
+- [ ] Found 3-5 relevant posts across target subreddits
+- [ ] Scored opportunities using matrix
+- [ ] Identified at least 1 high-score opportunity (7+)
+- [ ] Verified post authors are genuine (not spam accounts)
+- [ ] Checked competitor presence in discussions
+
+### **Weekly Review Questions:**
+1. **Which subreddits produce highest-quality opportunities?**
+2. **What keyword patterns generate best results?**
+3. **Are we missing obvious opportunities?** 
+4. **Do our scores correlate with actual business potential?**
+
+### **Success Metrics (Week 1):**
+- **Target**: 15-20 relevant posts identified
+- **Quality**: 30%+ score 6+ on opportunity matrix  
+- **Coverage**: All P1 subreddits monitored daily
+- **Efficiency**: <20 mins daily monitoring time
+
+---
+
+## **1.6 Ready for Phase 2 Criteria**
+
+**Before moving to Phase 2 (Content Analysis), we must have:**
+- ✅ Stable flow of 3-5 quality opportunities daily
+- ✅ Google Sheets system capturing all data points
+- ✅ Consistent scoring producing actionable priorities  
+- ✅ Understanding of each subreddit's culture/rules
+- ✅ Baseline metrics for measuring improvement
+
+---
+
+## **Implementation Timeline**
+
+**Day 1-2**: Set up Google Sheets templates and subreddit research
+**Day 3-4**: Test monitoring methods and refine keyword lists  
+**Day 5-7**: Validate scoring system with real opportunities
+**Week 2**: Optimize based on results, prepare for Phase 2
+
+---
+
+## **Context Preservation Notes**
+- All decisions grounded in Loox's competitive position vs Judge.me/Yotpo/Okendo
+- Subreddit selection based on actual community research findings
+- Keyword strategy reflects genuine ecommerce pain points and solution-seeking behavior
+- Scoring matrix designed for practical implementation, not theoretical perfection
+- Timeline assumes gradual scaling to avoid detection/overwhelm
+
+**Next Phase Dependency**: Phase 2 (Content Analysis) will build on the opportunity data collected here, using the same Google Sheets structure for consistency.
