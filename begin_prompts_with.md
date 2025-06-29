@@ -6,5 +6,7 @@ Please act with the follow rules all along:
 4. act meticulously and with rigor
 
 // For Claude with MCP use:
-use tavily and  Firecrawl for web research
-use sequential thinking all along the process 
+'''
+1. use tavily and  Firecrawl for web research
+2. use sequential thinking all along the process 
+'''
