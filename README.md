@@ -1,2 +1,2 @@
-# prompts
-My own prompt library
+# Prompts
+Laurom Ipsum?
